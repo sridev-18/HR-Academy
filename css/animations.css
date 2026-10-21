@@ -1,0 +1,80 @@
+/**
+ * =============================================================================
+ * HR SQUARE ACADEMY - MICRO-INTERACTIONS & ANIMATIONS (animations.css)
+ * High-performance hardware-accelerated CSS animations
+ * =============================================================================
+ */
+
+@keyframes pulse-dot {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.6);
+  }
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 8px rgba(37, 211, 102, 0);
+  }
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+  }
+}
+
+@keyframes pulse-wa {
+  0% {
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5);
+  }
+  70% {
+    box-shadow: 0 0 0 14px rgba(37, 211, 102, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+  }
+}
+
+.floating-wa {
+  animation: pulse-wa 2.5s infinite;
+}
+
+/* Scroll Trigger Animations */
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.animate-on-scroll.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Stagger delays for grid items */
+.courses-grid .animate-on-scroll:nth-child(1) { transition-delay: 0.05s; }
+.courses-grid .animate-on-scroll:nth-child(2) { transition-delay: 0.12s; }
+.courses-grid .animate-on-scroll:nth-child(3) { transition-delay: 0.19s; }
+.courses-grid .animate-on-scroll:nth-child(4) { transition-delay: 0.26s; }
+
+.teachers-grid .animate-on-scroll:nth-child(1) { transition-delay: 0.05s; }
+.teachers-grid .animate-on-scroll:nth-child(2) { transition-delay: 0.12s; }
+.teachers-grid .animate-on-scroll:nth-child(3) { transition-delay: 0.19s; }
+.teachers-grid .animate-on-scroll:nth-child(4) { transition-delay: 0.26s; }
+
+.why-us-grid .animate-on-scroll:nth-child(1) { transition-delay: 0.05s; }
+.why-us-grid .animate-on-scroll:nth-child(2) { transition-delay: 0.12s; }
+.why-us-grid .animate-on-scroll:nth-child(3) { transition-delay: 0.19s; }
+.why-us-grid .animate-on-scroll:nth-child(4) { transition-delay: 0.26s; }
+
+/* Reduced Motion for Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .animate-on-scroll {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}

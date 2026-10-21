@@ -1,0 +1,6 @@
+# robots.txt for HR Square Academy
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://hrsquareacademy.in/sitemap.xml

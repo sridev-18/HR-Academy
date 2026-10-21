@@ -1,0 +1,319 @@
+/**
+ * =============================================================================
+ * HR SQUARE ACADEMY - RESPONSIVE STYLESHEET (responsive.css)
+ * Agency-grade responsive architecture for Desktop, Tablet, and Mobile devices
+ * =============================================================================
+ */
+
+/* -----------------------------------------------------------------------------
+ * 1. LARGE TABLETS & LAPTOPS (<= 1024px)
+ * ----------------------------------------------------------------------------- */
+@media screen and (max-width: 1024px) {
+  :root {
+    --header-height: 70px;
+  }
+
+  /* Navigation Drawer */
+  .nav-hamburger {
+    display: flex;
+    z-index: 1100;
+  }
+
+  .nav-links {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 320px;
+    height: 100vh;
+    background-color: #FFFFFF;
+    box-shadow: -10px 0 30px rgba(11, 26, 48, 0.15);
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 100px 32px 40px 32px;
+    gap: 20px;
+    transition: right 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    z-index: 1050;
+  }
+
+  .nav-links.nav-open {
+    right: 0;
+  }
+
+  .nav-links a {
+    font-size: 1.125rem;
+    width: 100%;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--color-border-subtle);
+  }
+
+  .nav-backdrop {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(11, 26, 48, 0.5);
+    backdrop-filter: blur(4px);
+    z-index: 1020;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .nav-backdrop.active {
+    display: block;
+    opacity: 1;
+  }
+
+  /* Hamburger Active Animation */
+  .nav-hamburger.active span:nth-child(1) {
+    transform: translateY(8.5px) rotate(45deg);
+  }
+  .nav-hamburger.active span:nth-child(2) {
+    opacity: 0;
+  }
+  .nav-hamburger.active span:nth-child(3) {
+    transform: translateY(-8.5px) rotate(-45deg);
+  }
+
+  /* Hero Section */
+  .hero-inner {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+
+  .hero-content {
+    align-items: center;
+    text-align: center;
+  }
+
+  .hero-desc {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero-chips {
+    justify-content: center;
+  }
+
+  .hero-actions {
+    justify-content: center;
+  }
+
+  .hero-trust-bar {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+
+  .hero-showcase {
+    max-width: 580px;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  /* Grids */
+  .courses-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .teachers-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .why-us-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .cert-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .achievement-inner {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .achievement-cert-preview {
+    max-width: 480px;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .contact-inner {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+}
+
+/* -----------------------------------------------------------------------------
+ * 2. TABLETS & LARGE MOBILE (<= 768px)
+ * ----------------------------------------------------------------------------- */
+@media screen and (max-width: 768px) {
+  /* Stats Bar 2x2 */
+  .stats-bar-inner {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 28px 16px;
+  }
+
+  /* Flagship Card */
+  .course-card-flagship {
+    grid-template-columns: 1fr;
+    padding: 28px 20px;
+    gap: 24px;
+  }
+
+  .flagship-highlights {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .flagship-action {
+    align-items: flex-start;
+    width: 100%;
+  }
+
+  .flagship-action .btn {
+    width: 100%;
+  }
+
+  /* Certifications Container */
+  .certs-showcase {
+    padding: 28px 20px;
+  }
+
+  .student-achievement-spotlight {
+    padding: 24px 18px;
+  }
+
+  .achievement-meta {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .cert-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Footer */
+  .footer-inner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 28px;
+  }
+
+  .footer-nav {
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+}
+
+/* -----------------------------------------------------------------------------
+ * 3. MOBILE DEVICES (<= 480px)
+ * ----------------------------------------------------------------------------- */
+@media screen and (max-width: 480px) {
+  /* Global Padding */
+  .courses-section,
+  .why-us-section,
+  .faculty-section,
+  .gallery-section,
+  .contact-section {
+    padding: 64px 16px;
+  }
+
+  .hero {
+    padding: 40px 16px 60px 16px;
+  }
+
+  .nav-container {
+    padding: 0 16px;
+  }
+
+  .nav-brand-name {
+    font-size: 1.125rem;
+  }
+
+  .nav-actions .btn {
+    display: none; /* Keep call button in drawer or floating */
+  }
+
+  .hero-title {
+    font-size: 2.125rem;
+  }
+
+  .hero-desc {
+    font-size: 1rem;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .hero-actions .btn {
+    width: 100%;
+  }
+
+  .floating-glass-badge {
+    display: none; /* Hide floating badge overlays on tiny screens */
+  }
+
+  /* 1-Column Grids */
+  .courses-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .why-us-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .teachers-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .gallery-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cert-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .gallery-filters {
+    justify-content: flex-start;
+    overflow-x: auto;
+    padding-bottom: 8px;
+    flex-wrap: nowrap;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .gallery-filters .filter-btn {
+    flex-shrink: 0;
+  }
+
+  .contact-action-box {
+    padding: 24px 16px;
+  }
+
+  .floating-wa {
+    bottom: 20px;
+    right: 20px;
+    padding: 10px 16px;
+    font-size: 0.875rem;
+  }
+
+  .scroll-top {
+    bottom: 74px;
+    right: 20px;
+  }
+}

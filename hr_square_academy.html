@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HR Square Academy</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Arial,Helvetica,sans-serif;color:#18243a;background:#fff;line-height:1.6}
+header{position:sticky;top:0;z-index:10;background:#fff;box-shadow:0 2px 12px #00000018}
+nav{max-width:1100px;margin:auto;display:flex;align-items:center;justify-content:space-between;padding:14px 20px}
+.logo{font-weight:800;font-size:24px;color:#153b8f}.logo span{color:#e5a500}
+nav a{margin-left:22px;text-decoration:none;color:#26344d;font-weight:600}
+.btn{display:inline-block;background:#153b8f;color:white!important;padding:11px 18px;border-radius:25px;text-decoration:none}
+.hero{background:linear-gradient(135deg,#eef4ff,#fff8e8);padding:80px 20px}
+.hero-inner{max-width:1100px;margin:auto;display:grid;grid-template-columns:1.2fr .8fr;gap:40px;align-items:center}
+.badge{display:inline-block;background:#fff;border:1px solid #dce4f5;padding:6px 12px;border-radius:20px;color:#153b8f;font-weight:700;margin-bottom:15px}
+h1{font-size:52px;line-height:1.1;margin-bottom:18px}
+.hero p{font-size:19px;max-width:650px;color:#536079}
+.hero-card{background:#153b8f;color:#fff;padding:35px;border-radius:25px;box-shadow:0 18px 45px #153b8f33}
+.hero-card h2{font-size:28px;margin-bottom:12px}.hero-card p{color:#e8efff;font-size:16px}
+section{max-width:1100px;margin:auto;padding:70px 20px}
+.section-title{text-align:center;font-size:34px;margin-bottom:12px}
+.section-sub{text-align:center;color:#667085;margin-bottom:38px}
+.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.card{padding:25px;border:1px solid #e4e8f0;border-radius:18px;background:#fff;box-shadow:0 8px 25px #1725540b}
+.card h3{margin:10px 0;color:#153b8f}.icon{font-size:35px}
+.about{background:#f7f9fc}
+.about-inner{max-width:1100px;margin:auto;padding:70px 20px;display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+.about-box{background:#fff;border-radius:22px;padding:30px;box-shadow:0 10px 35px #0000000d}
+ul{padding-left:20px}.highlight{color:#e09b00;font-weight:800}
+.contact{background:#153b8f;color:#fff}
+.contact-inner{max-width:900px;margin:auto;text-align:center;padding:70px 20px}
+.contact p{margin:8px 0;color:#e8efff}.contact .btn{background:#e5a500;color:#172554!important;margin-top:18px}
+footer{text-align:center;padding:22px;background:#0d2862;color:#dfe8ff;font-size:14px}
+@media(max-width:800px){
+ nav{flex-wrap:wrap;gap:10px}nav div:last-child{width:100%;text-align:center}nav a{margin:0 7px}
+ .hero-inner,.about-inner{grid-template-columns:1fr}
+ h1{font-size:40px}.cards{grid-template-columns:1fr 1fr}
+}
+@media(max-width:500px){.cards{grid-template-columns:1fr}.hero{padding:55px 20px}}
+</style>
+</head>
+<body>
+<header>
+<nav>
+  <div class="logo">HR <span>SQUARE</span> ACADEMY</div>
+  <div>
+    <a href="#courses">Courses</a><a href="#about">About</a><a href="#contact">Contact</a>
+    <a class="btn" href="tel:9578532710">Call Now</a>
+  </div>
+</nav>
+</header>
+
+<main>
+<section class="hero">
+<div class="hero-inner">
+<div>
+<span class="badge">Admissions Open</span>
+<h1>Learn. Practice. <span class="highlight">Excel.</span></h1>
+<p>Build strong skills in <b>Vedic Maths, Abacus, Written Hindi and Spoken Hindi</b> with HR Square Academy.</p>
+<p style="margin-top:18px">Personal attention • Skill-based learning • Regular practice</p>
+<a class="btn" style="margin-top:25px" href="#contact">Join HR Square Academy</a>
+</div>
+<div class="hero-card">
+<h2>HR Square Academy</h2>
+<p>Helping students develop calculation skills, mathematical understanding, language skills, confidence and a strong learning foundation.</p>
+<hr style="border:0;border-top:1px solid #ffffff44;margin:22px 0">
+<p><b>📍 Location</b><br>Valluvar Nagar South, near Pugazhi Mandabam</p>
+<p><b>📞 Contact</b><br>9578532710</p>
+</div>
+</div>
+</section>
+
+<section id="courses">
+<h2 class="section-title">Our Courses</h2>
+<p class="section-sub">Practical learning programmes designed for children and students.</p>
+<div class="cards">
+<div class="card"><div class="icon">🧮</div><h3>Abacus</h3><p>Improve mental calculation, concentration, speed and accuracy through structured abacus practice.</p></div>
+<div class="card"><div class="icon">⚡</div><h3>Vedic Maths</h3><p>Learn smart calculation techniques and shortcuts to solve mathematics faster and confidently.</p></div>
+<div class="card"><div class="icon">📝</div><h3>Written Hindi</h3><p>Build Hindi reading, writing, vocabulary and grammar skills step by step.</p></div>
+<div class="card"><div class="icon">💬</div><h3>Spoken Hindi</h3><p>Develop everyday Hindi conversation skills with simple, practical speaking practice.</p></div>
+<div class="card"><div class="icon">📚</div><h3>Maths Tuition</h3><p><b>CBSE • State Board • ICSE • IGCSE</b><br>Classes 5th–12th with concept-based teaching, problem-solving, exam preparation, regular practice and tests.</p></div>
+</div>
+</section>
+
+<div class="about" id="about">
+<div class="about-inner">
+<div>
+<h2 class="section-title" style="text-align:left">Why Choose HR Square Academy?</h2>
+<p>We focus on making learning simple, engaging and consistent. Students learn concepts, practise regularly and build confidence through guided instruction.</p>
+</div>
+<div class="about-box">
+<ul>
+<li>Individual attention</li>
+<li>Regular practice and guidance</li>
+<li>Vedic Maths & Abacus skill development</li>
+<li>Written & Spoken Hindi training</li>
+<li>Online learning support available</li>
+</ul>
+</div>
+</div>
+</div>
+
+<section id="contact" class="contact">
+<div class="contact-inner">
+<h2 class="section-title">Start Learning Today</h2>
+<p>For admissions, course details and class timings, contact HR Square Academy.</p>
+<p><b>📞 9578532710</b></p>
+<p>📍 Valluvar Nagar South, near Pugazhi Mandabam</p>
+<a class="btn" href="tel:9578532710">Contact Academy</a>
+</div>
+</section>
+</main>
+
+<footer>© 2026 HR Square Academy • Maths Tuition • Vedic Maths • Abacus • Written Hindi • Spoken Hindi</footer>
+</body>
+</html>
