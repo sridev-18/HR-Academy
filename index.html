@@ -38,10 +38,293 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-  <!-- Core Stylesheets -->
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/responsive.css">
-  <link rel="stylesheet" href="css/animations.css">
+  <!-- Core Stylesheets (Versioned to Prevent Browser Caching) -->
+  <link rel="stylesheet" href="css/style.css?v=2.2">
+  <link rel="stylesheet" href="css/responsive.css?v=2.2">
+  <link rel="stylesheet" href="css/animations.css?v=2.2">
+
+  <style>
+  /* Guaranteed Inlined Styling for Highlighted Class Mode Cards */
+  .modes-showcase-container {
+    background: #F8FAFC;
+    border: 1.5px solid #E2E8F0;
+    border-radius: 24px;
+    padding: 38px 30px;
+    margin: 0 auto 52px auto;
+    box-shadow: 0 4px 20px rgba(11, 26, 48, 0.04);
+  }
+  .modes-showcase-header {
+    text-align: center;
+    max-width: 720px;
+    margin: 0 auto 34px auto;
+  }
+  .modes-showcase-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: #EEF3FB;
+    border: 1px solid rgba(27, 58, 107, 0.2);
+    color: #1B3A6B;
+    font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+    font-size: 0.75rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    padding: 6px 14px;
+    border-radius: 9999px;
+    margin-bottom: 12px;
+  }
+  .modes-showcase-title {
+    font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+    font-size: clamp(1.6rem, 2.8vw, 2.25rem);
+    font-weight: 800;
+    color: #0B1A30;
+    margin-bottom: 10px;
+    line-height: 1.2;
+  }
+  .modes-showcase-sub {
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: 0.95rem;
+    color: #475569;
+    line-height: 1.6;
+  }
+  .modes-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 28px;
+  }
+  .mode-highlight-card {
+    background: #FFFFFF;
+    border-radius: 20px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    position: relative;
+  }
+  .mode-highlight-card:hover {
+    transform: translateY(-5px);
+  }
+  /* Card 1: Offline Navy Accent */
+  .mode-card-offline {
+    border: 2.5px solid #1B3A6B;
+    box-shadow: 0 10px 30px rgba(27, 58, 107, 0.10);
+    background: linear-gradient(180deg, #FFFFFF 0%, #F5F8FC 100%);
+  }
+  .mode-card-offline:hover {
+    box-shadow: 0 16px 40px rgba(27, 58, 107, 0.18);
+  }
+  .bar-navy {
+    height: 6px;
+    background: linear-gradient(90deg, #1B3A6B 0%, #1565C0 100%);
+    width: 100%;
+  }
+  .badge-navy {
+    background: #1B3A6B;
+    color: #FFFFFF;
+  }
+  .icon-navy {
+    background: #EEF3FB;
+    border: 1.5px solid rgba(27, 58, 107, 0.2);
+  }
+  .tag-campus {
+    background: #FEF3C7;
+    color: #92400E;
+    border: 1px solid #FDE68A;
+  }
+  .banner-navy {
+    background: #EEF3FB;
+    color: #1B3A6B;
+    border: 1px solid rgba(27, 58, 107, 0.15);
+  }
+  .btn-mode-navy {
+    background: #1B3A6B;
+    color: #FFFFFF !important;
+  }
+  .btn-mode-navy:hover {
+    background: #0B1A30;
+    box-shadow: 0 6px 18px rgba(27, 58, 107, 0.35);
+  }
+  /* Card 2: Online Orange Accent */
+  .mode-card-online {
+    border: 2.5px solid #E85D04;
+    box-shadow: 0 10px 30px rgba(232, 93, 4, 0.12);
+    background: linear-gradient(180deg, #FFFFFF 0%, #FFF9F5 100%);
+  }
+  .mode-card-online:hover {
+    box-shadow: 0 16px 40px rgba(232, 93, 4, 0.22);
+  }
+  .bar-orange {
+    height: 6px;
+    background: linear-gradient(90deg, #E85D04 0%, #F5A623 100%);
+    width: 100%;
+  }
+  .badge-orange {
+    background: #E85D04;
+    color: #FFFFFF;
+  }
+  .icon-orange {
+    background: #FFF4EE;
+    border: 1.5px solid rgba(232, 93, 4, 0.25);
+  }
+  .tag-online {
+    background: #E0F2FE;
+    color: #0369A1;
+    border: 1px solid #BAE6FD;
+  }
+  .banner-orange {
+    background: #FFF4EE;
+    color: #C94E03;
+    border: 1px solid rgba(232, 93, 4, 0.2);
+  }
+  .btn-mode-orange {
+    background: #E85D04;
+    color: #FFFFFF !important;
+  }
+  .btn-mode-orange:hover {
+    background: #C94E03;
+    box-shadow: 0 6px 18px rgba(232, 93, 4, 0.35);
+  }
+  /* Card Interior Layout */
+  .mode-card-body {
+    padding: 26px 24px 30px 24px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+  }
+  .mode-card-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 16px;
+    flex-wrap: wrap;
+  }
+  .mode-icon-circle {
+    width: 52px;
+    height: 52px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.75rem;
+    flex-shrink: 0;
+  }
+  .mode-highlight-badge {
+    font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+    font-size: 0.8125rem;
+    font-weight: 700;
+    padding: 6px 14px;
+    border-radius: 9999px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .badge-live-pulse {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #FFFFFF;
+    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.4);
+    animation: pulse-dot 1.5s infinite;
+    display: inline-block;
+  }
+  .mode-card-heading {
+    font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+    font-size: 1.45rem;
+    font-weight: 800;
+    color: #0B1A30;
+    margin-bottom: 10px;
+  }
+  .mode-tag-pill {
+    font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+    font-size: 0.84rem;
+    padding: 7px 12px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    flex-wrap: wrap;
+    line-height: 1.4;
+    word-break: normal;
+    overflow-wrap: break-word;
+  }
+  .mode-feature-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 22px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    flex-grow: 1;
+  }
+  .mode-feature-list li {
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: 0.90625rem;
+    color: #334155;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    line-height: 1.5;
+  }
+  .mode-feature-list li strong {
+    color: #0B1A30;
+    font-weight: 700;
+  }
+  .feat-check {
+    color: #10B981;
+    font-weight: 800;
+    font-size: 1rem;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+  .mode-audience-banner {
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: 0.8125rem;
+    padding: 10px 14px;
+    border-radius: 8px;
+    margin-bottom: 22px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    line-height: 1.4;
+  }
+  .mode-card-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+    padding: 14px 20px;
+    border-radius: 12px;
+    font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+    font-size: 0.9375rem;
+    font-weight: 700;
+    text-decoration: none;
+    transition: all 0.25s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  }
+  @media (max-width: 900px) {
+    .modes-cards-grid {
+      grid-template-columns: 1fr;
+      gap: 22px;
+    }
+    .modes-showcase-container {
+      padding: 28px 18px;
+      margin-bottom: 38px;
+    }
+  }
+  @media (max-width: 480px) {
+    .modes-showcase-container {
+      padding: 22px 14px;
+      border-radius: 18px;
+    }
+    .mode-card-body {
+      padding: 18px 14px 22px 14px;
+    }
+  }
+  </style>
 
   <!-- Schema.org JSON-LD Structured Data for Local Business & Education -->
   <script type="application/ld+json">
@@ -290,47 +573,67 @@
         <p class="section-sub">Combining cognitive mental calculation sutras, linguistic fluency, and rigorous school board curriculum mastery across flexible learning modes.</p>
       </div>
 
-      <!-- CLASS DELIVERY MODES SHOWCASE BANNER -->
-      <div class="class-modes-banner animate-on-scroll">
-        <div class="class-modes-header">
-          <span class="modes-pill">Flexible Class Delivery Modes</span>
-          <h3>Choose How Your Child Learns Best</h3>
-          <p>Every programme is available in both <strong>In-Person Offline Classroom</strong> and <strong>Interactive Live Online</strong> formats with verified identical curriculum and individual teacher guidance.</p>
+      <!-- CLASS DELIVERY MODES HIGHLIGHTED SHOWCASE CARDS -->
+      <div class="modes-showcase-container animate-on-scroll">
+        <div class="modes-showcase-header">
+          <span class="modes-showcase-pill">Flexible Class Delivery Modes</span>
+          <h3 class="modes-showcase-title">Choose How Your Child Learns Best</h3>
+          <p class="modes-showcase-sub">Every programme is available in both <strong>In-Person Offline Classroom</strong> and <strong>Interactive Live Online</strong> formats with verified identical curriculum and dedicated teacher guidance.</p>
         </div>
 
-        <div class="class-modes-grid">
-          <!-- Mode 1: Offline Campus -->
-          <div class="mode-card mode-card-offline">
-            <div class="mode-card-top">
-              <div class="mode-icon-circle">🏫</div>
-              <div class="mode-badge">In-Person Campus</div>
+        <div class="modes-cards-grid">
+          <!-- Card 1: Offline Campus (Highlighted Navy Theme) -->
+          <div class="mode-highlight-card mode-card-offline">
+            <div class="mode-card-accent-bar bar-navy"></div>
+            <div class="mode-card-body">
+              <div class="mode-card-top">
+                <div class="mode-icon-circle icon-navy">🏫</div>
+                <span class="mode-highlight-badge badge-navy">🏫 In-Person Campus</span>
+              </div>
+              <h4 class="mode-card-heading">Offline Classroom Batches</h4>
+              <div class="mode-tag-pill tag-campus">
+                <span>📍</span> <strong>Valluvar Nagar South Campus</strong> &bull; near Pugazhi Mandabam
+              </div>
+              <ul class="mode-feature-list">
+                <li><span class="feat-check">✓</span> <span><strong>Hands-on Abacus:</strong> Physical instruments, tactile bead training &amp; live board demonstration</span></li>
+                <li><span class="feat-check">✓</span> <span><strong>Disciplined Environment:</strong> Structured, distraction-free study atmosphere with focused attention</span></li>
+                <li><span class="feat-check">✓</span> <span><strong>Classroom Assessments:</strong> Weekly in-person test series and interactive peer problem-solving</span></li>
+                <li><span class="feat-check">✓</span> <span><strong>Face-to-Face Mentorship:</strong> Immediate teacher assistance and personalized pacing</span></li>
+              </ul>
+              <div class="mode-audience-banner banner-navy">
+                <span>👥</span> <strong>Best for:</strong> Local students in Valluvar Nagar South
+              </div>
+              <a class="mode-card-btn btn-mode-navy" href="https://wa.me/919578532710?text=Hello%20HR%20Square%20Academy,%20I%20would%20like%20to%20enquire%20about%20Offline%20Campus%20batches." target="_blank" rel="noopener noreferrer">
+                <span>🏫</span> Enquire for Offline Classes &rarr;
+              </a>
             </div>
-            <h4>Offline Classroom Batches</h4>
-            <div class="mode-location">📍 Valluvar Nagar South Campus (Near Pugazhi Mandabam)</div>
-            <ul class="mode-perks">
-              <li><span class="perk-check">✓</span> Hands-on physical Abacus instruments &amp; live board demonstration</li>
-              <li><span class="perk-check">✓</span> Distraction-free, disciplined physical study environment</li>
-              <li><span class="perk-check">✓</span> Peer group problem-solving &amp; weekly in-person test assessments</li>
-              <li><span class="perk-check">✓</span> Direct face-to-face mentorship and immediate teacher assistance</li>
-            </ul>
-            <div class="mode-footer-tag">Ideal for students in Valluvar Nagar South and nearby neighborhoods</div>
           </div>
 
-          <!-- Mode 2: Live Online -->
-          <div class="mode-card mode-card-online">
-            <div class="mode-card-top">
-              <div class="mode-icon-circle">💻</div>
-              <div class="mode-badge mode-badge-gold">Live Interactive Online</div>
+          <!-- Card 2: Live Online (Highlighted Orange Theme) -->
+          <div class="mode-highlight-card mode-card-online">
+            <div class="mode-card-accent-bar bar-orange"></div>
+            <div class="mode-card-body">
+              <div class="mode-card-top">
+                <div class="mode-icon-circle icon-orange">💻</div>
+                <span class="mode-highlight-badge badge-orange"><span class="badge-live-pulse"></span> 💻 100% Live Interactive Online</span>
+              </div>
+              <h4 class="mode-card-heading">Live Online Classes</h4>
+              <div class="mode-tag-pill tag-online">
+                <span>🌐</span> <strong>Join from Anywhere</strong> &bull; Tamil Nadu, All-India &amp; NRI
+              </div>
+              <ul class="mode-feature-list">
+                <li><span class="feat-check">✓</span> <span><strong>100% Live 2-Way Classes:</strong> Real-time HD video &amp; audio interactive batches (Zero pre-recorded videos)</span></li>
+                <li><span class="feat-check">✓</span> <span><strong>Interactive Whiteboard:</strong> Screen-sharing, live problem solving &amp; instant teacher correction</span></li>
+                <li><span class="feat-check">✓</span> <span><strong>Micro-Batches (1:6):</strong> Small groups &amp; 1-on-1 pacing with digital practice sheets</span></li>
+                <li><span class="feat-check">✓</span> <span><strong>Zero Commute Hassle:</strong> Flexible evening and weekend batch slots from the safety of home</span></li>
+              </ul>
+              <div class="mode-audience-banner banner-orange">
+                <span>🏠</span> <strong>Best for:</strong> Students preferring flexible home learning
+              </div>
+              <a class="mode-card-btn btn-mode-orange" href="https://wa.me/919578532710?text=Hello%20HR%20Square%20Academy,%20I%20would%20like%20to%20book%20a%20Free%20Live%20Online%20Demo%20class." target="_blank" rel="noopener noreferrer">
+                <span>💻</span> Book Free Online Demo &rarr;
+              </a>
             </div>
-            <h4>Live Online Classes</h4>
-            <div class="mode-location">🌐 Attend from Anywhere (Tamil Nadu, All-India &amp; Overseas)</div>
-            <ul class="mode-perks">
-              <li><span class="perk-check">✓</span> 100% Live 2-way video &amp; audio interactive batches (Zero pre-recorded videos)</li>
-              <li><span class="perk-check">✓</span> Digital whiteboard demonstrations, screen-share &amp; real-time correction</li>
-              <li><span class="perk-check">✓</span> Small micro-batches &amp; 1-on-1 pacing with digital practice sheets</li>
-              <li><span class="perk-check">✓</span> Flexible evening &amp; weekend timings without travel or commute hassle</li>
-            </ul>
-            <div class="mode-footer-tag">Open for students anywhere across Tamil Nadu, India, and NRI students</div>
           </div>
         </div>
       </div>
