@@ -81,23 +81,30 @@ const AcademyGallery = {
       tag: 'Trip Video'
     },
 
-    // --- 2. CLASSROOM & ABACUS LEARNING ---
+    // --- 2. CLASSROOM & ACADEMY LEARNING ---
     {
       id: 'class-1',
-      title: 'Full Abacus Classroom Training Session in Purple Uniforms',
+      title: 'Academy Interactive Classroom Learning & Study Session',
       category: 'classroom',
       type: 'image',
-      src: 'assets/images/gallery/' + encodeURIComponent('WhatsApp Image 2026-10-11 at 12.14.00 PM.jpeg'),
+      src: 'assets/images/gallery/' + encodeURIComponent('WhatsApp Image 2026-10-09 at 12.46.22 PM (9).jpeg'),
       tag: 'Classroom'
     },
     {
       id: 'class-2',
-      title: 'Student Blackboard Abacus Calculation Demonstration Video',
+      title: 'Interactive Group Workshop & Student Learning Activity',
       category: 'classroom',
-      type: 'video',
-      src: 'assets/videos/' + encodeURIComponent('WhatsApp Video 2026-10-11 at 12.10.34 PM.mp4'),
-      poster: 'assets/images/gallery/' + encodeURIComponent('WhatsApp Image 2026-10-11 at 12.14.00 PM.jpeg'),
-      tag: 'Classroom Video'
+      type: 'image',
+      src: 'assets/images/gallery/' + encodeURIComponent('WhatsApp Image 2026-10-11 at 12.22.08 PM.jpeg'),
+      tag: 'Classroom'
+    },
+    {
+      id: 'class-3',
+      title: 'Outdoor Interactive Study & Creative Sketching Session',
+      category: 'classroom',
+      type: 'image',
+      src: 'assets/images/gallery/' + encodeURIComponent('WhatsApp Image 2026-10-09 at 12.46.22 PM (2).jpeg'),
+      tag: 'Classroom'
     },
 
     // --- 3. ART, CRAFT & CREATIVE ACTIVITIES ---
