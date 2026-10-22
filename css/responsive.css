@@ -154,10 +154,60 @@
  * 2. TABLETS & LARGE MOBILE (<= 768px)
  * ----------------------------------------------------------------------------- */
 @media screen and (max-width: 768px) {
+  /* Navigation Bar Compact */
+  .nav-actions .btn {
+    display: none;
+  }
+
+  .floating-glass-badge {
+    display: none; /* Prevent horizontal overflow from negative offsets */
+  }
+
+  .section-title {
+    font-size: 1.45rem;
+    line-height: 1.25;
+    letter-spacing: -0.02em;
+    word-break: normal;
+    overflow-wrap: break-word;
+  }
+
+  .hero-live-pill {
+    white-space: normal;
+    text-align: center;
+    font-size: 0.75rem;
+    line-height: 1.45;
+  }
+
+  .hero-trust-bar {
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+
   /* Stats Bar 2x2 */
   .stats-bar-inner {
     grid-template-columns: repeat(2, 1fr);
     gap: 28px 16px;
+  }
+
+  /* Class Modes Banner */
+  .class-modes-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .class-modes-banner {
+    padding: 24px 16px;
+    margin-bottom: 32px;
+  }
+
+  .class-modes-header h3 {
+    font-size: 1.375rem;
+    line-height: 1.25;
+  }
+
+  .mode-card {
+    padding: 20px 16px;
   }
 
   /* Flagship Card */
@@ -248,7 +298,10 @@
   }
 
   .hero-title {
-    font-size: 2.125rem;
+    font-size: 1.875rem;
+    line-height: 1.2;
+    word-break: normal;
+    overflow-wrap: break-word;
   }
 
   .hero-desc {
@@ -258,6 +311,12 @@
   .hero-actions {
     flex-direction: column;
     width: 100%;
+  }
+
+  .hero-trust-bar {
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
   }
 
   .hero-actions .btn {
@@ -271,6 +330,17 @@
   /* 1-Column Grids */
   .courses-grid {
     grid-template-columns: 1fr;
+  }
+
+  .class-modes-banner {
+    padding: 24px 16px;
+    border-radius: var(--radius-xl);
+  }
+
+  .course-card-meta {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
   }
 
   .why-us-grid {
