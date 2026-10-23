@@ -30,6 +30,20 @@ const AcademyLightbox = {
     this.captionEl = document.getElementById('lightboxCaption');
 
     this.bindEvents();
+    this.bindLightboxTriggers();
+  },
+
+  bindLightboxTriggers() {
+    document.querySelectorAll('[data-lightbox-src]').forEach(el => {
+      el.addEventListener('click', (e) => {
+        e.preventDefault();
+        const src = el.getAttribute('data-lightbox-src');
+        const type = el.getAttribute('data-lightbox-type') || 'image';
+        const caption = el.getAttribute('data-lightbox-caption') || '';
+        this.open(src, type, caption);
+      });
+      el.style.cursor = 'pointer';
+    });
   },
 
   bindEvents() {

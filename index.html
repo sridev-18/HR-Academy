@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: https:; media-src 'self'; connect-src 'self'; form-action 'self' https://wa.me; base-uri 'self';">
 
   <title>HR Square Academy | Vedic Maths, Abacus, Hindi & School Maths Tuition (Online & Offline)</title>
   <meta name="description" content="HR Square Academy offers certified Online & Offline coaching in Vedic Maths, Abacus, Written & Spoken Hindi, and Classes 5th–12th Maths Tuition. NSDC Approved Partner. Flexible interactive online batches and campus classes. Call 9578532710.">
@@ -39,9 +40,9 @@
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <!-- Core Stylesheets (Versioned to Prevent Browser Caching) -->
-  <link rel="stylesheet" href="css/style.css?v=3.2">
-  <link rel="stylesheet" href="css/responsive.css?v=3.2">
-  <link rel="stylesheet" href="css/animations.css?v=3.2">
+  <link rel="stylesheet" href="css/style.css?v=3.4">
+  <link rel="stylesheet" href="css/responsive.css?v=3.4">
+  <link rel="stylesheet" href="css/animations.css?v=3.4">
 
   <style>
   /* Guaranteed Inlined Styling for Highlighted Class Mode Cards */
@@ -381,9 +382,9 @@
   </script>
 
   <!-- Scripts (Versioned to Bust Browser Cache) -->
-  <script src="js/main.js?v=3.2" defer></script>
-  <script src="js/gallery.js?v=3.2" defer></script>
-  <script src="js/lightbox.js?v=3.2" defer></script>
+  <script src="js/main.js?v=3.4" defer></script>
+  <script src="js/gallery.js?v=3.4" defer></script>
+  <script src="js/lightbox.js?v=3.4" defer></script>
 </head>
 <body>
 
@@ -394,7 +395,7 @@
   <header id="header">
     <nav class="nav-container" aria-label="Main Navigation">
       <a href="#hero" class="nav-brand" aria-label="HR Square Academy Homepage">
-        <img src="assets/images/logo/logo_clean.png" alt="HR Square Academy Logo" class="nav-logo-img" onerror="this.src='assets/images/logo/logo.jpeg'">
+        <img src="assets/images/logo/logo_clean.png" alt="HR Square Academy Logo" class="nav-logo-img" data-fallback="assets/images/logo/logo.jpeg">
         <div class="nav-brand-text">
           <div class="nav-brand-name">HR <span>SQUARE</span> ACADEMY</div>
           <div class="nav-brand-sub">Approved Partner — NSDC Skill India</div>
@@ -938,7 +939,7 @@
         <div class="student-achievement-spotlight animate-on-scroll">
           <div class="achievement-badge-pill">🏆 Proud Student Achievement &amp; State Level Honour</div>
           <div class="achievement-inner">
-            <div class="achievement-cert-preview" onclick="window.AcademyLightbox.open('assets/images/gallery/karani_certificate.jpg', 'image', 'State Level Championship 2026 Batch Topper Merit Certificate — Karani V S (STVM-0 Level)')">
+            <div class="achievement-cert-preview" data-lightbox-src="assets/images/gallery/karani_certificate.jpg" data-lightbox-type="image" data-lightbox-caption="State Level Championship 2026 Batch Topper Merit Certificate — Karani V S (STVM-0 Level)">
               <img src="assets/images/gallery/karani_certificate.jpg" alt="Merit Certificate - Karani V S" loading="lazy">
               <div class="cert-hover-overlay">🔍 Click to View Full Certificate</div>
             </div>
@@ -967,7 +968,7 @@
         </div>
 
         <div class="cert-grid">
-          <div class="cert-card cert-card-achievement" onclick="window.AcademyLightbox.open('assets/images/gallery/karani_certificate.jpg', 'image', 'State Level Championship 2026 Batch Topper Merit Certificate — Karani V S (STVM-0 Level)')">
+          <div class="cert-card cert-card-achievement" data-lightbox-src="assets/images/gallery/karani_certificate.jpg" data-lightbox-type="image" data-lightbox-caption="State Level Championship 2026 Batch Topper Merit Certificate — Karani V S (STVM-0 Level)">
             <div class="cert-card-img-wrap">
               <img src="assets/images/gallery/karani_certificate.jpg" alt="State Level Batch Topper Certificate - Karani V S" loading="lazy">
               <div class="cert-hover-overlay">🔍</div>
@@ -975,7 +976,7 @@
             <div class="cert-label cert-label-highlight">🏆 Karani V S (Batch Topper — 1st)</div>
           </div>
 
-          <div class="cert-card" onclick="window.AcademyLightbox.open('assets/images/gallery/WhatsApp%20Image%202026-10-14%20at%2010.04.01%20PM.jpeg', 'image', 'International Abacus Teacher Training Certificate (Grade A+)')">
+          <div class="cert-card" data-lightbox-src="assets/images/gallery/WhatsApp%20Image%202026-10-14%20at%2010.04.01%20PM.jpeg" data-lightbox-type="image" data-lightbox-caption="International Abacus Teacher Training Certificate (Grade A+)">
             <div class="cert-card-img-wrap">
               <img src="assets/images/gallery/WhatsApp%20Image%202026-10-14%20at%2010.04.01%20PM.jpeg" alt="Abacus Certificate Grade A+" loading="lazy">
               <div class="cert-hover-overlay">🔍</div>
@@ -983,7 +984,7 @@
             <div class="cert-label">Abacus Trainer (Grade A+)</div>
           </div>
 
-          <div class="cert-card" onclick="window.AcademyLightbox.open('assets/images/gallery/WhatsApp%20Image%202026-10-14%20at%2010.04.00%20PM.jpeg', 'image', 'International Vedic Maths Teacher Training Certificate (Grade A)')">
+          <div class="cert-card" data-lightbox-src="assets/images/gallery/WhatsApp%20Image%202026-10-14%20at%2010.04.00%20PM.jpeg" data-lightbox-type="image" data-lightbox-caption="International Vedic Maths Teacher Training Certificate (Grade A)">
             <div class="cert-card-img-wrap">
               <img src="assets/images/gallery/WhatsApp%20Image%202026-10-14%20at%2010.04.00%20PM.jpeg" alt="Vedic Maths Certificate Grade A" loading="lazy">
               <div class="cert-hover-overlay">🔍</div>
@@ -991,7 +992,7 @@
             <div class="cert-label">Vedic Maths Trainer (Grade A)</div>
           </div>
 
-          <div class="cert-card" onclick="window.AcademyLightbox.open('assets/images/gallery/WhatsApp%20Image%202026-10-14%20at%2010.04.01%20PM%20(2).jpeg', 'image', 'Authorised Abacus Skill Centre — HR Square Academy')">
+          <div class="cert-card" data-lightbox-src="assets/images/gallery/WhatsApp%20Image%202026-10-14%20at%2010.04.01%20PM%20(2).jpeg" data-lightbox-type="image" data-lightbox-caption="Authorised Abacus Skill Centre — HR Square Academy">
             <div class="cert-card-img-wrap">
               <img src="assets/images/gallery/WhatsApp%20Image%202026-10-14%20at%2010.04.01%20PM%20(2).jpeg" alt="Abacus Centre Authorisation" loading="lazy">
               <div class="cert-hover-overlay">🔍</div>
@@ -999,7 +1000,7 @@
             <div class="cert-label">Abacus Centre Authorisation</div>
           </div>
 
-          <div class="cert-card" onclick="window.AcademyLightbox.open('assets/images/gallery/WhatsApp%20Image%202026-10-14%20at%2010.04.01%20PM%20(3).jpeg', 'image', 'Authorised Vedic Maths Skill Centre — HR Square Academy')">
+          <div class="cert-card" data-lightbox-src="assets/images/gallery/WhatsApp%20Image%202026-10-14%20at%2010.04.01%20PM%20(3).jpeg" data-lightbox-type="image" data-lightbox-caption="Authorised Vedic Maths Skill Centre — HR Square Academy">
             <div class="cert-card-img-wrap">
               <img src="assets/images/gallery/WhatsApp%20Image%202026-10-14%20at%2010.04.01%20PM%20(3).jpeg" alt="Vedic Maths Authorisation" loading="lazy">
               <div class="cert-hover-overlay">🔍</div>
@@ -1007,7 +1008,7 @@
             <div class="cert-label">Vedic Maths Authorisation</div>
           </div>
 
-          <div class="cert-card" onclick="window.AcademyLightbox.open('assets/images/teachers/WhatsApp%20Image%202026-10-14%20at%2010.04.01%20PM%20(1).jpeg', 'image', 'Art & Craft Professional Certificate — HR Square Academy')">
+          <div class="cert-card" data-lightbox-src="assets/images/teachers/WhatsApp%20Image%202026-10-14%20at%2010.04.01%20PM%20(1).jpeg" data-lightbox-type="image" data-lightbox-caption="Art & Craft Professional Certificate — HR Square Academy">
             <div class="cert-card-img-wrap">
               <img src="assets/images/teachers/WhatsApp%20Image%202026-10-14%20at%2010.04.01%20PM%20(1).jpeg" alt="Art and Craft Certificate" loading="lazy">
               <div class="cert-hover-overlay">🔍</div>
@@ -1124,7 +1125,7 @@
   <footer class="footer">
     <div class="footer-inner">
       <div class="footer-brand">
-        <img src="assets/images/logo/logo_clean.png" alt="HR Square Academy Logo" class="footer-logo-img" onerror="this.src='assets/images/logo/logo.jpeg'">
+        <img src="assets/images/logo/logo_clean.png" alt="HR Square Academy Logo" class="footer-logo-img" data-fallback="assets/images/logo/logo.jpeg">
         <div>
           <div class="footer-brand-title">HR <span>Square</span> Academy</div>
           <div class="footer-tagline">Approved Training Partner — NSDC Skill India &bull; Online &amp; Offline Coaching</div>

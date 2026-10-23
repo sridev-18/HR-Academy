@@ -139,6 +139,15 @@ document.addEventListener('DOMContentLoaded', () => {
     animatedElements.forEach(el => el.classList.add('is-visible'));
   }
 
+  // Image Fallback Handling (Unobtrusive, eliminates inline onerror handlers)
+  document.querySelectorAll('img[data-fallback]').forEach(img => {
+    img.addEventListener('error', function() {
+      if (this.dataset.fallback && this.src !== this.dataset.fallback) {
+        this.src = this.dataset.fallback;
+      }
+    }, { once: true });
+  });
+
   // Initial trigger on load
   handleScroll();
 });

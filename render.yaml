@@ -9,6 +9,12 @@ services:
 
     headers:
       - path: /*
+        name: Content-Security-Policy
+        value: "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: https:; media-src 'self'; connect-src 'self'; frame-ancestors 'self'; form-action 'self' https://wa.me; base-uri 'self'; upgrade-insecure-requests;"
+      - path: /*
+        name: Permissions-Policy
+        value: "camera=(), microphone=(), geolocation=(), payment=()"
+      - path: /*
         name: X-Content-Type-Options
         value: nosniff
       - path: /*
