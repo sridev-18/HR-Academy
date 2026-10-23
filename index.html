@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self' data:; img-src 'self' data: https://hrsquareacademy.in; media-src 'self'; connect-src 'self'; form-action 'self' https://wa.me; base-uri 'self';">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; font-src 'self' data:; img-src 'self' data: https://hrsquareacademy.in; media-src 'self'; connect-src 'self'; form-action 'self' https://wa.me; base-uri 'self';">
 
   <title>HR Square Academy | Vedic Maths, Abacus, Hindi & School Maths Tuition (Online & Offline)</title>
   <meta name="description" content="HR Square Academy offers certified Online & Offline coaching in Vedic Maths, Abacus, Written & Spoken Hindi, and Classes 5th–12th Maths Tuition. NSDC Approved Partner. Flexible interactive online batches and campus classes. Call 9578532710.">
@@ -39,295 +39,12 @@
   <link rel="preload" href="assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
 
   <!-- Self-Hosted Fonts Stylesheet (Zero CDN / Cross-Origin Dependency) -->
-  <link rel="stylesheet" href="assets/fonts/fonts.css?v=1.0">
+  <link rel="stylesheet" href="assets/fonts/fonts.css?v=3.6">
 
   <!-- Core Stylesheets (Versioned to Prevent Browser Caching) -->
-  <link rel="stylesheet" href="css/style.css?v=3.5">
-  <link rel="stylesheet" href="css/responsive.css?v=3.5">
-  <link rel="stylesheet" href="css/animations.css?v=3.5">
-
-  <style>
-  /* Guaranteed Inlined Styling for Highlighted Class Mode Cards */
-  .modes-showcase-container {
-    background: #F8FAFC;
-    border: 1.5px solid #E2E8F0;
-    border-radius: 24px;
-    padding: 38px 30px;
-    margin: 0 auto 52px auto;
-    box-shadow: 0 4px 20px rgba(11, 26, 48, 0.04);
-  }
-  .modes-showcase-header {
-    text-align: center;
-    max-width: 720px;
-    margin: 0 auto 34px auto;
-  }
-  .modes-showcase-pill {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    background: #EEF3FB;
-    border: 1px solid rgba(27, 58, 107, 0.2);
-    color: #1B3A6B;
-    font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
-    font-size: 0.75rem;
-    font-weight: 800;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    padding: 6px 14px;
-    border-radius: 9999px;
-    margin-bottom: 12px;
-  }
-  .modes-showcase-title {
-    font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
-    font-size: clamp(1.6rem, 2.8vw, 2.25rem);
-    font-weight: 800;
-    color: #0B1A30;
-    margin-bottom: 10px;
-    line-height: 1.2;
-  }
-  .modes-showcase-sub {
-    font-family: 'Inter', system-ui, sans-serif;
-    font-size: 0.95rem;
-    color: #475569;
-    line-height: 1.6;
-  }
-  .modes-cards-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 28px;
-  }
-  .mode-highlight-card {
-    background: #FFFFFF;
-    border-radius: 20px;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
-    position: relative;
-  }
-  .mode-highlight-card:hover {
-    transform: translateY(-5px);
-  }
-  /* Card 1: Offline Navy Accent */
-  .mode-card-offline {
-    border: 2.5px solid #1B3A6B;
-    box-shadow: 0 10px 30px rgba(27, 58, 107, 0.10);
-    background: linear-gradient(180deg, #FFFFFF 0%, #F5F8FC 100%);
-  }
-  .mode-card-offline:hover {
-    box-shadow: 0 16px 40px rgba(27, 58, 107, 0.18);
-  }
-  .bar-navy {
-    height: 6px;
-    background: linear-gradient(90deg, #1B3A6B 0%, #1565C0 100%);
-    width: 100%;
-  }
-  .badge-navy {
-    background: #1B3A6B;
-    color: #FFFFFF;
-  }
-  .icon-navy {
-    background: #EEF3FB;
-    border: 1.5px solid rgba(27, 58, 107, 0.2);
-  }
-  .tag-campus {
-    background: #FEF3C7;
-    color: #92400E;
-    border: 1px solid #FDE68A;
-  }
-  .banner-navy {
-    background: #EEF3FB;
-    color: #1B3A6B;
-    border: 1px solid rgba(27, 58, 107, 0.15);
-  }
-  .btn-mode-navy {
-    background: #1B3A6B;
-    color: #FFFFFF !important;
-  }
-  .btn-mode-navy:hover {
-    background: #0B1A30;
-    box-shadow: 0 6px 18px rgba(27, 58, 107, 0.35);
-  }
-  /* Card 2: Online Orange Accent */
-  .mode-card-online {
-    border: 2.5px solid #E85D04;
-    box-shadow: 0 10px 30px rgba(232, 93, 4, 0.12);
-    background: linear-gradient(180deg, #FFFFFF 0%, #FFF9F5 100%);
-  }
-  .mode-card-online:hover {
-    box-shadow: 0 16px 40px rgba(232, 93, 4, 0.22);
-  }
-  .bar-orange {
-    height: 6px;
-    background: linear-gradient(90deg, #E85D04 0%, #F5A623 100%);
-    width: 100%;
-  }
-  .badge-orange {
-    background: #E85D04;
-    color: #FFFFFF;
-  }
-  .icon-orange {
-    background: #FFF4EE;
-    border: 1.5px solid rgba(232, 93, 4, 0.25);
-  }
-  .tag-online {
-    background: #E0F2FE;
-    color: #0369A1;
-    border: 1px solid #BAE6FD;
-  }
-  .banner-orange {
-    background: #FFF4EE;
-    color: #C94E03;
-    border: 1px solid rgba(232, 93, 4, 0.2);
-  }
-  .btn-mode-orange {
-    background: #E85D04;
-    color: #FFFFFF !important;
-  }
-  .btn-mode-orange:hover {
-    background: #C94E03;
-    box-shadow: 0 6px 18px rgba(232, 93, 4, 0.35);
-  }
-  /* Card Interior Layout */
-  .mode-card-body {
-    padding: 26px 24px 30px 24px;
-    display: flex;
-    flex-direction: column;
-    flex-grow: 1;
-  }
-  .mode-card-top {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 12px;
-    margin-bottom: 16px;
-    flex-wrap: wrap;
-  }
-  .mode-icon-circle {
-    width: 52px;
-    height: 52px;
-    border-radius: 14px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.75rem;
-    flex-shrink: 0;
-  }
-  .mode-highlight-badge {
-    font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
-    font-size: 0.8125rem;
-    font-weight: 700;
-    padding: 6px 14px;
-    border-radius: 9999px;
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-  }
-  .badge-live-pulse {
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    background: #FFFFFF;
-    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.4);
-    animation: pulse-dot 1.5s infinite;
-    display: inline-block;
-  }
-  .mode-card-heading {
-    font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
-    font-size: 1.45rem;
-    font-weight: 800;
-    color: #0B1A30;
-    margin-bottom: 10px;
-  }
-  .mode-tag-pill {
-    font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
-    font-size: 0.84rem;
-    padding: 7px 12px;
-    border-radius: 8px;
-    margin-bottom: 20px;
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    flex-wrap: wrap;
-    line-height: 1.4;
-    word-break: normal;
-    overflow-wrap: break-word;
-  }
-  .mode-feature-list {
-    list-style: none;
-    padding: 0;
-    margin: 0 0 22px 0;
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    flex-grow: 1;
-  }
-  .mode-feature-list li {
-    font-family: 'Inter', system-ui, sans-serif;
-    font-size: 0.90625rem;
-    color: #334155;
-    display: flex;
-    align-items: flex-start;
-    gap: 10px;
-    line-height: 1.5;
-  }
-  .mode-feature-list li strong {
-    color: #0B1A30;
-    font-weight: 700;
-  }
-  .feat-check {
-    color: #10B981;
-    font-weight: 800;
-    font-size: 1rem;
-    flex-shrink: 0;
-    margin-top: 1px;
-  }
-  .mode-audience-banner {
-    font-family: 'Inter', system-ui, sans-serif;
-    font-size: 0.8125rem;
-    padding: 10px 14px;
-    border-radius: 8px;
-    margin-bottom: 22px;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    line-height: 1.4;
-  }
-  .mode-card-btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    width: 100%;
-    padding: 14px 20px;
-    border-radius: 12px;
-    font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
-    font-size: 0.9375rem;
-    font-weight: 700;
-    text-decoration: none;
-    transition: all 0.25s ease;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-  }
-  @media (max-width: 900px) {
-    .modes-cards-grid {
-      grid-template-columns: 1fr;
-      gap: 22px;
-    }
-    .modes-showcase-container {
-      padding: 28px 18px;
-      margin-bottom: 38px;
-    }
-  }
-  @media (max-width: 480px) {
-    .modes-showcase-container {
-      padding: 22px 14px;
-      border-radius: 18px;
-    }
-    .mode-card-body {
-      padding: 18px 14px 22px 14px;
-    }
-  }
-  </style>
+  <link rel="stylesheet" href="css/style.css?v=3.6">
+  <link rel="stylesheet" href="css/responsive.css?v=3.6">
+  <link rel="stylesheet" href="css/animations.css?v=3.6">
 
   <!-- Schema.org JSON-LD Structured Data for Local Business & Education -->
   <script type="application/ld+json">
@@ -384,9 +101,9 @@
   </script>
 
   <!-- Scripts (Versioned to Bust Browser Cache) -->
-  <script src="js/main.js?v=3.5" defer></script>
-  <script src="js/gallery.js?v=3.5" defer></script>
-  <script src="js/lightbox.js?v=3.5" defer></script>
+  <script src="js/main.js?v=3.6" defer></script>
+  <script src="js/gallery.js?v=3.6" defer></script>
+  <script src="js/lightbox.js?v=3.6" defer></script>
 </head>
 <body>
 
@@ -536,7 +253,7 @@
               </div>
             </div>
 
-            <a class="btn btn-navy" style="width: 100%;" href="tel:9578532710">
+            <a class="btn btn-navy btn-full" href="tel:9578532710">
               <span>📞</span> Call Academy: 9578532710
             </a>
           </div>
@@ -747,7 +464,7 @@
             <a class="btn btn-primary btn-lg" href="https://wa.me/919578532710?text=Hello%20HR%20Square%20Academy,%20I%20would%20like%20to%20enquire%20about%20Online%20and%20Offline%20Maths%20Tuition%20classes." target="_blank" rel="noopener noreferrer">
               <span>💬</span> Enquire on WhatsApp
             </a>
-            <span style="font-size: 0.8125rem; color: var(--color-text-light);">Limited Seats per Batch</span>
+            <span class="flagship-note">Limited Seats per Batch</span>
           </div>
         </div>
 
@@ -1095,7 +812,7 @@
             </div>
           </div>
 
-          <a class="btn btn-outline" style="border-color: rgba(255,255,255,0.4); color: #FFFFFF; width: fit-content;" href="https://www.google.com/maps/search/Valluvar+Nagar+South+near+Pugazhi+Mandabam" target="_blank" rel="noopener noreferrer">
+          <a class="btn btn-outline btn-outline-white" href="https://www.google.com/maps/search/Valluvar+Nagar+South+near+Pugazhi+Mandabam" target="_blank" rel="noopener noreferrer">
             <span>🗺️</span> Open Location in Google Maps
           </a>
         </div>
@@ -1114,7 +831,7 @@
             </a>
           </div>
 
-          <div style="font-size: 0.8125rem; color: rgba(255,255,255,0.65); text-align: center;">
+          <div class="contact-demo-note">
             ✓ Free demo class available for both Online &amp; Offline modes
           </div>
         </div>

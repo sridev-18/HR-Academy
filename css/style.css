@@ -2516,3 +2516,45 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 700;
 }
 
+/* =============================================================================
+ * UTILITY CLASSES FOR STRICT CSP COMPLIANCE (ZERO INLINE STYLES)
+ * ============================================================================= */
+
+.btn-full {
+  width: 100% !important;
+  justify-content: center;
+}
+
+.flagship-note {
+  font-size: 0.8125rem;
+  color: var(--color-text-light);
+}
+
+.btn-outline-white {
+  border-color: rgba(255, 255, 255, 0.4) !important;
+  color: #FFFFFF !important;
+  width: fit-content !important;
+}
+
+.contact-demo-note {
+  font-size: 0.8125rem;
+  color: rgba(255, 255, 255, 0.65);
+  text-align: center;
+}
+
+.body-lock-scroll {
+  overflow: hidden !important;
+}
+
+[data-lightbox-src] {
+  cursor: pointer;
+}
+
+.lightbox-nav.is-hidden {
+  display: none !important;
+}
+
+.lightbox-nav.is-visible {
+  display: flex !important;
+}
+

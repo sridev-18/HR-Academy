@@ -333,6 +333,15 @@
     border-radius: var(--radius-xl);
   }
 
+  .modes-showcase-container {
+    padding: 22px 14px;
+    border-radius: 18px;
+  }
+
+  .mode-card-body {
+    padding: 18px 14px 22px 14px;
+  }
+
   .course-card-meta {
     flex-direction: column;
     align-items: flex-start;

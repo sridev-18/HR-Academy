@@ -10,7 +10,7 @@ services:
     headers:
       - path: /*
         name: Content-Security-Policy
-        value: "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self' data:; img-src 'self' data: https://hrsquareacademy.in; media-src 'self'; connect-src 'self'; frame-ancestors 'self'; form-action 'self' https://wa.me; base-uri 'self'; upgrade-insecure-requests;"
+        value: "default-src 'self'; script-src 'self'; style-src 'self'; font-src 'self' data:; img-src 'self' data: https://hrsquareacademy.in; media-src 'self'; connect-src 'self'; frame-ancestors 'self'; form-action 'self' https://wa.me; base-uri 'self'; upgrade-insecure-requests;"
       - path: /*
         name: Permissions-Policy
         value: "camera=(), microphone=(), geolocation=(), payment=()"

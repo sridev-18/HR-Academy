@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
     navHamburger.classList.add('active');
     navHamburger.setAttribute('aria-expanded', 'true');
     if (navBackdrop) navBackdrop.classList.add('active');
-    document.body.style.overflow = 'hidden';
+    document.body.classList.add('body-lock-scroll');
   }
 
   function closeMobileMenu() {
@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
     navHamburger.classList.remove('active');
     navHamburger.setAttribute('aria-expanded', 'false');
     if (navBackdrop) navBackdrop.classList.remove('active');
-    document.body.style.overflow = '';
+    document.body.classList.remove('body-lock-scroll');
   }
 
   if (navHamburger) {

@@ -42,7 +42,6 @@ const AcademyLightbox = {
         const caption = el.getAttribute('data-lightbox-caption') || '';
         this.open(src, type, caption);
       });
-      el.style.cursor = 'pointer';
     });
   },
 
@@ -102,13 +101,15 @@ const AcademyLightbox = {
 
     this.modalEl.classList.add('active');
     this.modalEl.setAttribute('aria-hidden', 'false');
-    document.body.style.overflow = 'hidden';
+    document.body.classList.add('body-lock-scroll');
 
     // Show/hide nav buttons based on list length
     if (this.prevBtn && this.nextBtn) {
       const showNav = this.currentList.length > 1;
-      this.prevBtn.style.display = showNav ? 'flex' : 'none';
-      this.nextBtn.style.display = showNav ? 'flex' : 'none';
+      this.prevBtn.classList.toggle('is-hidden', !showNav);
+      this.prevBtn.classList.toggle('is-visible', showNav);
+      this.nextBtn.classList.toggle('is-hidden', !showNav);
+      this.nextBtn.classList.toggle('is-visible', showNav);
     }
   },
 
@@ -121,15 +122,11 @@ const AcademyLightbox = {
       video.controls = true;
       video.autoplay = true;
       video.playsInline = true;
-      video.style.maxWidth = '100%';
-      video.style.maxHeight = '75vh';
       this.mediaContainer.appendChild(video);
     } else {
       const img = document.createElement('img');
       img.src = src;
       img.alt = caption || 'HR Square Academy';
-      img.style.maxWidth = '100%';
-      img.style.maxHeight = '75vh';
       this.mediaContainer.appendChild(img);
     }
 
@@ -143,7 +140,7 @@ const AcademyLightbox = {
 
     this.modalEl.classList.remove('active');
     this.modalEl.setAttribute('aria-hidden', 'true');
-    document.body.style.overflow = '';
+    document.body.classList.remove('body-lock-scroll');
 
     if (this.mediaContainer) {
       const video = this.mediaContainer.querySelector('video');
