@@ -19,7 +19,7 @@ Modern, responsive, accessible academy website for **HR Square Academy**, upgrad
   * Certified International Vedic Maths Trainer (**Grade A**) — IIVA / AVAS
   * Certified Professional Art & Craft Instructor
   * Authorised Skill Centre in Abacus & Vedic Maths (Approved Training Partner of NSDC Skill India)
-* **Location:** Valluvar Nagar South, near Pugazhi Mandabam
+* **Location:** Valluvar Nagar South, near Pugazhi Mandabam, Velayuthampalayam, Karur, Tamil Nadu
 * **Contact Phone / WhatsApp:** `9578532710`
 * **Brand Colours:** Navy Blue (`#153b8f`, `#0d2862`), Accent Gold (`#e5a500`), and Highlights (`#e09b00`)
 * **Reference Backup:** `hr_square_academy.html` (preserved intact)
