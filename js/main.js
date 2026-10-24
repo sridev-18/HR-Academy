@@ -148,6 +148,27 @@ document.addEventListener('DOMContentLoaded', () => {
     }, { once: true });
   });
 
+  // --- 6. Media Protection Deterrents (UI & Interaction Level) ---
+  // Suppress context menu exclusively on images and videos without breaking text, link, or button context menus
+  document.addEventListener('contextmenu', (e) => {
+    if (e.target.tagName === 'IMG' || e.target.tagName === 'VIDEO' || e.target.closest('.lightbox-media-container')) {
+      e.preventDefault();
+    }
+  });
+
+  // Prevent drag initiation on images and videos across all browsers
+  document.addEventListener('dragstart', (e) => {
+    if (e.target.tagName === 'IMG' || e.target.tagName === 'VIDEO') {
+      e.preventDefault();
+      return false;
+    }
+  });
+
+  // Ensure draggable="false" attribute is applied across all media elements
+  document.querySelectorAll('img, video').forEach(media => {
+    media.setAttribute('draggable', 'false');
+  });
+
   // Initial trigger on load
   handleScroll();
 });

@@ -456,7 +456,7 @@ const AcademyGallery = {
 
       card.innerHTML = `
         <div class="gallery-card-thumb">
-          <img src="${thumbSrc}" alt="${item.title}" loading="lazy">
+          <img src="${thumbSrc}" alt="${item.title}" loading="lazy" draggable="false">
           ${item.type === 'video' ? '<div class="video-play-badge" aria-hidden="true">▶</div>' : ''}
           <span class="gallery-badge ${item.category === 'trip' ? 'badge-trip' : ''}">${item.tag}</span>
         </div>

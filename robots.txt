@@ -2,5 +2,11 @@
 User-agent: *
 Allow: /
 
+# Prevent search engine crawlers from indexing build configs and internal files
+Disallow: /render.yaml
+Disallow: /README.md
+Disallow: /hr_square_academy.html
+Disallow: /.git
+
 # Sitemap location
 Sitemap: https://hrsquareacademy.in/sitemap.xml

@@ -46,6 +46,10 @@ const AcademyLightbox = {
   },
 
   bindEvents() {
+    if (this.mediaContainer) {
+      this.mediaContainer.addEventListener('contextmenu', (e) => e.preventDefault());
+    }
+
     if (this.closeBtn) {
       this.closeBtn.addEventListener('click', () => this.close());
     }
@@ -122,11 +126,18 @@ const AcademyLightbox = {
       video.controls = true;
       video.autoplay = true;
       video.playsInline = true;
+      video.draggable = false;
+      // Security deterrent: removes standard browser download button in supporting browsers (Chromium/WebKit).
+      // Note: This is an interface deterrent only; network-level download prevention requires server-authenticated signed streams.
+      video.setAttribute('controlsList', 'nodownload');
+      video.addEventListener('contextmenu', (e) => e.preventDefault());
       this.mediaContainer.appendChild(video);
     } else {
       const img = document.createElement('img');
       img.src = src;
       img.alt = caption || 'HR Square Academy';
+      img.draggable = false;
+      img.addEventListener('contextmenu', (e) => e.preventDefault());
       this.mediaContainer.appendChild(img);
     }
 

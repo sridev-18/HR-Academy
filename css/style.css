@@ -276,6 +276,16 @@ body {
 img, picture, video {
   max-width: 100%;
   display: block;
+  -webkit-user-drag: none;
+  -khtml-user-drag: none;
+  -moz-user-drag: none;
+  -o-user-drag: none;
+  user-drag: none;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -webkit-touch-callout: none;
 }
 
 a {
@@ -2071,6 +2081,11 @@ h1, h2, h3, h4, h5, h6 {
   object-fit: contain;
   border-radius: var(--radius-md);
   box-shadow: var(--shadow-xl);
+  -webkit-user-drag: none;
+  user-drag: none;
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
 }
 
 .lightbox-media-container video {
@@ -2078,6 +2093,11 @@ h1, h2, h3, h4, h5, h6 {
   max-height: 75vh;
   border-radius: var(--radius-md);
   outline: none;
+  -webkit-user-drag: none;
+  user-drag: none;
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
 }
 
 .lightbox-caption {

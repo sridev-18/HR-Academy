@@ -22,6 +22,12 @@ Icon?
 *.swp
 *.swo
 *~
+*.bak
+*.backup
+*.old
+*.orig
+*.tmp
+~*
 
 # Logs and Runtime Files
 *.log
@@ -37,10 +43,46 @@ tmp/
 temp/
 .cache/
 node_modules/
+*.map
 
-# Environment Variables & Secrets
+# Environment Variables & Genuinely Sensitive Secrets
 .env
-.env.local
-.env.development.local
-.env.test.local
-.env.production.local
+.env.*
+*.env
+*.pem
+*.key
+*.pfx
+*.p12
+*.crt
+*.cer
+credentials.json
+service-account*.json
+client_secret*.json
+
+# Database & Storage Dumps
+*.sql
+*.sqlite
+*.sqlite3
+*.db
+*.dump
+
+# Archives & Compressed Backups
+*.zip
+*.tar
+*.tar.gz
+*.tgz
+*.rar
+*.7z
+
+# Python Runtime & Virtual Environments
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+env/
+
+# Local Dev/Deployment Automation Scripts (keep repository clean)
+take_screenshots.py
+deploy.bat
+copy_redesign.ps1
