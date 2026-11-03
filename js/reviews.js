@@ -666,7 +666,7 @@ const AcademyReviews = {
       }
 
       // Show success toast
-      this.showToast(`Thank you, ${escapeHTML(name)}! Your review has been saved in PostgreSQL and is now live.`);
+      this.showToast(`Thank you, ${escapeHTML(name)}! Your review has been submitted and is now live.`);
 
       // Refresh data
       this.fetchSummary();
