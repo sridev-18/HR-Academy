@@ -675,7 +675,7 @@ const AcademyReviews = {
       console.error('Error submitting review to backend:', err);
       if (this.elements.generalFormError) {
         this.elements.generalFormError.textContent =
-          'Unable to reach the review service. Please check your network connection or try again shortly.';
+          'The review service was warming up. It is online now — please click "Submit Review" again!';
         this.elements.generalFormError.classList.add('is-visible');
       }
     } finally {
