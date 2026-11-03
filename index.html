@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; font-src 'self' data:; img-src 'self' data: https://hrsquareacademy.in; media-src 'self'; connect-src 'self'; object-src 'none'; form-action 'self' https://wa.me; base-uri 'self'; upgrade-insecure-requests;">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; font-src 'self' data:; img-src 'self' data: https://hrsquareacademy.in; media-src 'self'; connect-src 'self' http://127.0.0.1:8000 http://localhost:8000 https://hr-square-reviews.onrender.com; object-src 'none'; form-action 'self' https://wa.me; base-uri 'self'; upgrade-insecure-requests;">
 
   <title>HR Square Academy | Vedic Maths, Abacus, Hindi & School Maths Tuition (Online & Offline)</title>
   <meta name="description" content="HR Square Academy offers certified Online & Offline coaching in Vedic Maths, Abacus, Written & Spoken Hindi, and Classes 5th–12th Maths Tuition. NSDC Approved Partner. Flexible interactive online batches and campus classes. Call 9578532710.">
@@ -39,12 +39,12 @@
   <link rel="preload" href="assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
 
   <!-- Self-Hosted Fonts Stylesheet (Zero CDN / Cross-Origin Dependency) -->
-  <link rel="stylesheet" href="assets/fonts/fonts.css?v=3.9">
+  <link rel="stylesheet" href="assets/fonts/fonts.css?v=4.0">
 
   <!-- Core Stylesheets (Versioned to Prevent Browser Caching) -->
-  <link rel="stylesheet" href="css/style.css?v=3.9">
-  <link rel="stylesheet" href="css/responsive.css?v=3.9">
-  <link rel="stylesheet" href="css/animations.css?v=3.9">
+  <link rel="stylesheet" href="css/style.css?v=4.0">
+  <link rel="stylesheet" href="css/responsive.css?v=4.0">
+  <link rel="stylesheet" href="css/animations.css?v=4.0">
 
   <!-- Schema.org JSON-LD Structured Data for Local Business & Education -->
   <script type="application/ld+json">
@@ -101,9 +101,10 @@
   </script>
 
   <!-- Scripts (Versioned to Bust Browser Cache) -->
-  <script src="js/main.js?v=3.9" defer></script>
-  <script src="js/gallery.js?v=3.9" defer></script>
-  <script src="js/lightbox.js?v=3.9" defer></script>
+  <script src="js/main.js?v=4.0" defer></script>
+  <script src="js/gallery.js?v=4.0" defer></script>
+  <script src="js/lightbox.js?v=4.0" defer></script>
+  <script src="js/reviews.js?v=4.0" defer></script>
 </head>
 <body>
 
@@ -127,6 +128,7 @@
         <li><a href="#faculty">Faculty</a></li>
         <li><a href="#certs">Accreditations &amp; Achievements</a></li>
         <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#reviews">Reviews</a></li>
         <li><a href="#contact">Campus &amp; Contact</a></li>
       </ul>
 
@@ -760,6 +762,54 @@
       <div class="gallery-grid" id="galleryGrid"></div>
     </section>
 
+    <!-- PARENT & STUDENT REVIEWS SECTION -->
+    <section id="reviews" class="reviews-section">
+      <div class="reviews-inner">
+        <div class="section-header animate-on-scroll">
+          <div class="section-pill">Community Feedback</div>
+          <h2 class="section-title">What Parents &amp; Students Say About Us</h2>
+          <p class="section-sub">Your experiences inspire us to keep learning and growing together.</p>
+        </div>
+
+        <!-- Rating Summary Bar (Computed live from PostgreSQL backend) -->
+        <div class="reviews-summary-bar animate-on-scroll" id="reviewsSummaryBar" hidden>
+          <div class="summary-score-box">
+            <span class="summary-big-num" id="summaryAvgRating">0.0</span>
+            <div class="summary-score-meta">
+              <div class="summary-stars" id="summaryStars" aria-hidden="true">★★★★★</div>
+              <div class="summary-count-text">Based on <strong id="summaryTotalCount">0</strong> verified parent &amp; student reviews</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Controls: Filter Tabs & Write Review Button -->
+        <div class="reviews-controls animate-on-scroll">
+          <div class="reviews-filter-group" id="reviewFilters" role="tablist" aria-label="Filter reviews by reviewer type">
+            <button class="review-filter-btn active" data-filter="all" role="tab" aria-selected="true">All Reviews</button>
+            <button class="review-filter-btn" data-filter="parent" role="tab" aria-selected="false">👨‍👩‍👦 Parents</button>
+            <button class="review-filter-btn" data-filter="student" role="tab" aria-selected="false">🎓 Students</button>
+          </div>
+
+          <button class="btn btn-primary btn-review-trigger" id="openReviewModalBtn" type="button">
+            <span>✍️</span> Write a Review
+          </button>
+        </div>
+
+        <!-- Submission Feedback Toast -->
+        <div class="review-toast" id="reviewToast" role="status" aria-live="polite" hidden></div>
+
+        <!-- Dynamic Reviews Grid -->
+        <div class="reviews-grid" id="reviewsGrid" aria-live="polite"></div>
+
+        <!-- Load More Reviews Button Container -->
+        <div class="reviews-load-more" id="reviewsLoadMoreContainer" hidden>
+          <button class="btn btn-outline" id="loadMoreReviewsBtn" type="button">
+            <span>↓</span> Load More Reviews
+          </button>
+        </div>
+      </div>
+    </section>
+
     <!-- CAMPUS LOCATION & CONTACT SECTION -->
     <section id="contact" class="contact-section">
       <div class="contact-inner">
@@ -857,6 +907,7 @@
         <a href="#faculty">Faculty</a>
         <a href="#certs">Accreditations</a>
         <a href="#gallery">Gallery</a>
+        <a href="#reviews">Reviews</a>
         <a href="#contact">Contact</a>
       </nav>
     </div>
@@ -874,6 +925,100 @@
 
   <!-- SCROLL TO TOP BUTTON -->
   <button class="scroll-top" id="scrollTop" aria-label="Scroll to top of page">&uarr;</button>
+
+  <!-- REVIEW SUBMISSION MODAL -->
+  <div id="reviewModal" class="review-modal" aria-hidden="true" role="dialog" aria-labelledby="reviewModalTitle">
+    <div class="review-modal-backdrop" id="reviewModalBackdrop"></div>
+    <div class="review-modal-window">
+      <div class="review-modal-header">
+        <div>
+          <h3 class="review-modal-title" id="reviewModalTitle">Share Your Experience</h3>
+          <p class="review-modal-sub">Tell us about your learning journey at HR Square Academy</p>
+        </div>
+        <button class="review-modal-close" id="closeReviewModalBtn" aria-label="Close review dialog">&times;</button>
+      </div>
+
+      <form class="review-form" id="reviewForm" novalidate>
+        <!-- Full Name -->
+        <div class="form-group">
+          <label for="reviewAuthorName" class="form-label">Your Name <span class="req">*</span></label>
+          <input type="text" id="reviewAuthorName" class="form-input" placeholder="e.g. Ramesh Kumar" required maxlength="60" autocomplete="name">
+          <div class="form-error" id="nameError">Please enter your name (minimum 2 characters).</div>
+        </div>
+
+        <!-- Reviewer Type & Course -->
+        <div class="form-row">
+          <div class="form-group">
+            <span class="form-label">I am a <span class="req">*</span></span>
+            <div class="role-selector" role="radiogroup" aria-label="Reviewer Type">
+              <label class="role-pill">
+                <input type="radio" name="reviewerType" value="Parent" checked>
+                <span>👨‍👩‍👦 Parent</span>
+              </label>
+              <label class="role-pill">
+                <input type="radio" name="reviewerType" value="Student">
+                <span>🎓 Student</span>
+              </label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="reviewCourse" class="form-label">Course Enrolled <span class="req">*</span></label>
+            <select id="reviewCourse" class="form-select" required>
+              <option value="" disabled selected>Select Course...</option>
+              <option value="Abacus">Abacus</option>
+              <option value="Vedic Maths">Vedic Maths</option>
+              <option value="Written Hindi">Written Hindi</option>
+              <option value="Spoken Hindi">Spoken Hindi</option>
+              <option value="Maths Tuition">Maths Tuition</option>
+            </select>
+            <div class="form-error" id="courseError">Please select a course.</div>
+          </div>
+        </div>
+
+        <!-- Rating Stars -->
+        <div class="form-group">
+          <span class="form-label">Your Rating <span class="req">*</span></span>
+          <div class="star-rating-widget" id="starRatingWidget" role="radiogroup" aria-label="Star Rating">
+            <button type="button" class="star-btn active" data-star="1" aria-label="1 star">★</button>
+            <button type="button" class="star-btn active" data-star="2" aria-label="2 stars">★</button>
+            <button type="button" class="star-btn active" data-star="3" aria-label="3 stars">★</button>
+            <button type="button" class="star-btn active" data-star="4" aria-label="4 stars">★</button>
+            <button type="button" class="star-btn active" data-star="5" aria-label="5 stars">★</button>
+            <span class="rating-label" id="ratingScoreText">5 out of 5 Stars</span>
+          </div>
+          <input type="hidden" id="reviewRating" value="5">
+          <div class="form-error" id="ratingError">Please select a star rating.</div>
+        </div>
+
+        <!-- Review Message -->
+        <div class="form-group">
+          <div class="form-label-row">
+            <label for="reviewMessage" class="form-label">Your Review <span class="req">*</span></label>
+            <span class="char-count" id="reviewCharCount">0 / 500</span>
+          </div>
+          <textarea id="reviewMessage" class="form-textarea" rows="4" placeholder="Share specific details about teacher support, calculation speed progress, or your child's experience..." required minlength="20" maxlength="500"></textarea>
+          <div class="form-error" id="messageError">Please share at least 20 characters about your experience.</div>
+        </div>
+
+        <!-- Storage Notice -->
+        <div class="form-notice">
+          <span class="notice-icon" aria-hidden="true">🔒</span>
+          <p><strong>Verified Academy Reviews:</strong> Your review will be saved securely in the academy's PostgreSQL database and displayed live to help new parents and students.</p>
+        </div>
+
+        <div class="form-error form-error-general" id="generalFormError"></div>
+
+        <!-- Modal Actions -->
+        <div class="form-actions">
+          <button type="button" class="btn btn-outline btn-sm" id="cancelReviewBtn">Cancel</button>
+          <button type="submit" class="btn btn-primary" id="submitReviewBtn">
+            <span>🚀</span> Submit Review
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
 
   <!-- LIGHTBOX MODAL CONTAINER -->
   <div id="lightboxModal" class="lightbox" aria-hidden="true" role="dialog" aria-label="Media Lightbox Preview">
